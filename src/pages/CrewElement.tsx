@@ -42,7 +42,7 @@ export default function CrewElement() {
                                             <Link key={index} to={`/crew/${item.name.split(' ').join('-').toLowerCase()}`}>
                                                 <div
                                                     className='crew_li'
-                                                    style={item.name.toLowerCase() == crewMember.crewId?.split('-').join(' ').toLowerCase() ? { backgroundColor: '#FFF' } : {}}
+                                                    style={item.name.toLowerCase() == crewMember.crewId?.split('-').join(' ').toLowerCase() ? { opacity: 1 } : {}}
                                                 >
                                                 </div>
                                             </Link>

@@ -24,9 +24,6 @@ export default function TechElement() {
             setIsTablet(window.innerWidth < 1025);
         };
 
-        console.log(isTablet);
-
-
         window.addEventListener('resize', handleResize);
         handleResize();
     });

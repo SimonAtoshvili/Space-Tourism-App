@@ -20,13 +20,10 @@ export default function DestinationElement() {
 
   const [paramsData, setParamsData] = useState<ParamsData | undefined>()
   let params = useParams<{ destId: string }>()
-  console.log(params);
 
   useEffect(() => {
     setParamsData(data?.destinations.filter((element: ParamsData) => element.name.toLowerCase() == params.destId)[0])
   }, [data, params])
-
-  console.log('hello');
 
   return (
     <>

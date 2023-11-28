@@ -31,5 +31,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #363841;
+    /* background-color: #363841; */
+    opacity: 0.1744;
+    background: #FFF;
 }

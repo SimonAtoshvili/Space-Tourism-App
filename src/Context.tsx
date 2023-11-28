@@ -45,7 +45,7 @@ const MyContext = createContext<MyContextType | undefined>(undefined)
 export const MyProvider = ({ children }: MyProviderProps) => {
     const [data, setData] = useState<DataInterface | null>(null)
     const [isMobile, setIsMobile] = useState<boolean>(false)
-
+    
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 630);
@@ -58,6 +58,7 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     useEffect(() => {
         axios.get('/data.json').then((data2) => setData(data2.data))
     }, [])
+
 
     return (
         <MyContext.Provider value={{ data, isMobile }}>

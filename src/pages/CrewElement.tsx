@@ -20,7 +20,7 @@ export default function CrewElement() {
     let crewMember = useParams<{ crewId: string }>()
 
     useEffect(() => {
-        setMemberData(data?.crew.filter((element: MemberData) => element.name == crewMember.crewId?.split('-').join(' '))[0])
+        setMemberData(data?.crew.filter((element: MemberData) => element.name.toLowerCase() == crewMember.crewId?.split('-').join(' '))[0])
     }, [data, crewMember])
 
     return (
@@ -39,10 +39,10 @@ export default function CrewElement() {
                                     </p>
                                     <div className="crew_nav">
                                         {data?.crew.map((item: MemberData, index: number) => (
-                                            <Link key={index} to={`/crew/${item.name.split(' ').join('-')}`}>
+                                            <Link key={index} to={`/crew/${item.name.split(' ').join('-').toLowerCase()}`}>
                                                 <div
                                                     className='crew_li'
-                                                    style={item.name == crewMember.crewId?.split('-').join(' ') ? { backgroundColor: '#FFF' } : {}}
+                                                    style={item.name.toLowerCase() == crewMember.crewId?.split('-').join(' ').toLowerCase() ? { backgroundColor: '#FFF' } : {}}
                                                 >
                                                 </div>
                                             </Link>

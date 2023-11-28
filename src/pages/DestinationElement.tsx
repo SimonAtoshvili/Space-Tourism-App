@@ -23,7 +23,7 @@ export default function DestinationElement() {
   console.log(params);
 
   useEffect(() => {
-    setParamsData(data?.destinations.filter((element: ParamsData) => element.name == params.destId)[0])
+    setParamsData(data?.destinations.filter((element: ParamsData) => element.name.toLowerCase() == params.destId)[0])
   }, [data, params])
 
   console.log('hello');
@@ -43,9 +43,9 @@ export default function DestinationElement() {
                       ? data.destinations.map((element: ParamsData, index: number) => (
                         <li
                           key={index}
-                          style={element.name == params.destId ? { borderColor: '#FFF' } : {}}
+                          style={element.name.toLowerCase() == params.destId ? { borderColor: '#FFF' } : {}}
                         >
-                          <Link to={`/destination/${element.name}`} style={element.name == params.destId ? { color: '#FFF' } : {}}>{element.name}</Link></li>
+                          <Link to={`/destination/${element.name.toLowerCase()}`} style={element.name.toLowerCase() == params.destId ? { color: '#FFF' } : {}}>{element.name}</Link></li>
                       ))
                       : null}
                   </ul>

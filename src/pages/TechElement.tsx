@@ -33,9 +33,9 @@ export default function TechElement() {
 
     useEffect(() => {
         if ((params.techId?.split('-'))?.length == 1) {
-            setNewData(data?.technology.filter((element: NewData) => element.name == params.techId)[0])
+            setNewData(data?.technology.filter((element: NewData) => element.name.toLowerCase() == params.techId)[0])
         } else {
-            setNewData(data?.technology.filter((element: NewData) => element.name == params.techId?.split('-').join(' '))[0])
+            setNewData(data?.technology.filter((element: NewData) => element.name.toLowerCase()  == params.techId?.split('-').join(' ').toLowerCase())[0])
         }
     }, [data, params])
     return (
@@ -50,11 +50,11 @@ export default function TechElement() {
                                     <div className="lis">
                                         {data?.technology.map((element: NewData, index: number) => (
                                             <Link
-                                                to={`/technology/${data ? ((element.name).split(' ')).length == 1 ? element.name : ((element.name).split(' ')).join('-') : ''}`}
+                                                to={`/technology/${data ? ((element.name).split(' ')).length == 1 ? element.name.toLowerCase() : ((element.name).split(' ')).join('-').toLowerCase() : ''}`}
                                                 key={index}>
                                                 <div
                                                     className='tech_li'
-                                                    style={params.techId?.split('-').length == 1 ? (element.name == params.techId ? { backgroundColor: '#FFF', color: '#000' } : {}) : (element.name == params.techId?.split('-').join(' ') ? { backgroundColor: '#FFF', color: '#000' } : {})}
+                                                    style={params.techId?.split('-').length == 1 ? (element.name.toLowerCase() == params.techId ? { backgroundColor: '#FFF', color: '#000' } : {}) : (element.name == params.techId?.split('-').join(' ').toLowerCase() ? { backgroundColor: '#FFF', color: '#000' } : {})}
                                                 >
                                                     {index}</div>
                                             </Link>

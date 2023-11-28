@@ -5,6 +5,7 @@ import CrewElement from './pages/CrewElement.js'
 import TechElement from './pages/TechElement.js'
 import { useEffect, useState } from 'react'
 import { useMyContext } from './Context.tsx'
+// import Destination from './pages/Destination.tsx'
 
 function App() {
   const { isMobile } = useMyContext()
@@ -16,13 +17,13 @@ function App() {
   
   useEffect(() => {
     if (location.pathname == '/destination') {
-      navigate('/destination/Moon')
+      navigate('/destination/moon')
     }
     if (location.pathname == '/crew') {
-      navigate('/crew/Douglas-Hurley')
+      navigate('/crew/douglas-hurley')
     }
     if (location.pathname == '/technology') {
-      navigate('/technology/Launch-vehicle')
+      navigate('/technology/launch-vehicle')
     }
   }, [])
 
@@ -46,21 +47,21 @@ function App() {
               style={location.pathname.includes('destination') ? { borderColor: '#fff' } : { borderColor: 'transparent' }}
               onClick={() => { setMobNav(false) }}
             >
-              <Link to={'/destination/Moon'}><span>01</span>Destination</Link>
+              <Link to={'/destination/moon'}><span>01</span>Destination</Link>
             </li>
             <li
               className='header_li'
               style={location.pathname.includes('crew') ? { borderColor: '#fff' } : { borderColor: 'transparent' }}
               onClick={() => { setMobNav(false) }}
             >
-              <Link to={'/crew/Douglas-Hurley'}><span>02</span>Crew</Link>
+              <Link to={'/crew/douglas-hurley'}><span>02</span>Crew</Link>
             </li>
             <li
               className='header_li'
               style={location.pathname.includes('technology') ? { borderColor: '#fff' } : { borderColor: 'transparent' }}
               onClick={() => { setMobNav(false) }}
             >
-              <Link to={'/technology/Launch-vehicle'}><span>03</span>Technology</Link>
+              <Link to={'/technology/launch-vehicle'}><span>03</span>Technology</Link>
             </li>
           </ul>
         </nav>

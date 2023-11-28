@@ -28,7 +28,7 @@ function App() {
     <>
       <header>
         <Link to={'/'}>
-          <img src="./assets/shared/logo.svg" alt="logo" className='logo' />
+          <img src="/assets/shared/logo.svg" alt="logo" className='logo' />
         </Link>
         <nav style={isMobile ? (mobNav ? { display: 'block' } : { display: 'none' }) : {}} className={`${isMobile ? 'mob_nav' : ''}`}>
           <ul>
@@ -68,7 +68,7 @@ function App() {
             ?
             <img
               className='burger'
-              src={`../public/assets/shared/${mobNav ? "icon-close.svg" : "icon-hamburger.svg"}`} alt="close"
+              src={`/assets/shared/${mobNav ? "icon-close.svg" : "icon-hamburger.svg"}`} alt="close"
               onClick={() => {
                 setMobNav(!mobNav)
               }}

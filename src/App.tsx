@@ -12,10 +12,6 @@ function App() {
   const navigate = useNavigate()
   const [mobNav, setMobNav] = useState<boolean>(false)
 
-  console.log(location);
-  console.log(navigate);
-
-
   useEffect(() => {
     if (location.pathname == '/destination') {
       navigate('/destination/Moon')
@@ -32,7 +28,7 @@ function App() {
     <>
       <header>
         <Link to={'/'}>
-          <img src="../public/assets/shared/logo.svg" alt="logo" className='logo' />
+          <img src="./assets/shared/logo.svg" alt="logo" className='logo' />
         </Link>
         <nav style={isMobile ? (mobNav ? { display: 'block' } : { display: 'none' }) : {}} className={`${isMobile ? 'mob_nav' : ''}`}>
           <ul>

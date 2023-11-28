@@ -15,7 +15,7 @@ interface ParamsData {
   travel: string;
 }
 
-export default function Moon() {
+export default function DestinationElement() {
   const { data } = useMyContext();
 
   const [paramsData, setParamsData] = useState<ParamsData | undefined>()
@@ -25,6 +25,8 @@ export default function Moon() {
     setParamsData(data?.destinations.filter((element: ParamsData) => element.name == params.destId)[0])
   }, [data, params])
 
+  console.log('hello');
+  
   return (
     <>
       {

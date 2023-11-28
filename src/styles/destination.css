@@ -1,5 +1,5 @@
 #destination_root {
-    background: url(../../public/assets/destination/background-destination-desktop.jpg);
+    background: url(/assets/destination/background-destination-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 50px;

@@ -12,6 +12,8 @@ function App() {
   const navigate = useNavigate()
   const [mobNav, setMobNav] = useState<boolean>(false)
 
+  console.log(location.pathname);
+  
   useEffect(() => {
     if (location.pathname == '/destination') {
       navigate('/destination/Moon')

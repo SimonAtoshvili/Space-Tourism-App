@@ -1,5 +1,5 @@
 #crew_root {
-    background: url(../../public/assets/crew/background-crew-desktop.jpg);
+    background: url(/assets/crew/background-crew-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }

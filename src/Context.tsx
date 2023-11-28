@@ -56,14 +56,7 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     })
 
     useEffect(() => {
-        const dataAxios = async () => {
-            const response = await axios.get('/data.json');
-            const axsiosData = await response.data;
-            setData(axsiosData);
-        }
-
-        dataAxios();
-
+        axios.get('/data.json').then((data2) => setData(data2.data))
     }, [])
 
     return (

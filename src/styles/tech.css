@@ -1,0 +1,60 @@
+#tech_root {
+    background: url(../../public/assets/technology/background-technology-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+.lis {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.tech_li {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 32px;
+}
+
+.content_tech {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    height: 550px;
+}
+
+.terminology {
+    color: #D0D6F9;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+}
+
+.tech_heading {
+    color: #FFF;
+    font-size: 50px;
+    margin: 11px 0 17px 0;
+    text-transform: uppercase;
+}
+
+.tech_text {
+    margin: 0 50px;
+}
+
+.gross_content {
+    position: relative;
+}
+
+.tech_img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100px;
+}

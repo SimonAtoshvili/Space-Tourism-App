@@ -1,0 +1,53 @@
+#home_root {
+    background: url(../../public/assets/home/background-home-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+.home {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 200px;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    color: #D0D6F9;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.home_h1 {
+    font-size: 150px;
+    margin: 24px 0;
+}
+
+.text {
+    color: #D0D6F9;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.explore {
+    height: 275px;
+    width: 275px;
+    border-radius: 50%;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0B0D17;
+    font-size: 32px;
+    letter-spacing: 2px;
+}

@@ -54,7 +54,7 @@ export default function TechElement() {
                                                 key={index}>
                                                 <div
                                                     className='tech_li'
-                                                    style={params.techId?.split('-').length == 1 ? (element.name.toLowerCase() == params.techId ? { backgroundColor: '#FFF', color: '#000' } : {}) : (element.name == params.techId?.split('-').join(' ').toLowerCase() ? { backgroundColor: '#FFF', color: '#000' } : {})}
+                                                    style={params.techId?.split('-').length == 1 ? (element.name.toLowerCase() == params.techId ? { backgroundColor: '#FFF', color: '#000' } : {}) : (element.name.toLowerCase() == params.techId?.split('-').join(' ').toLowerCase() ? { backgroundColor: '#FFF', color: '#000' } : {})}
                                                 >
                                                     {index}</div>
                                             </Link>

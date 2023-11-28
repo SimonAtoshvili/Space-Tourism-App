@@ -4,13 +4,16 @@ import DestinationEelement from './pages/DestinationElement.js'
 import CrewElement from './pages/CrewElement.js'
 import TechElement from './pages/TechElement.js'
 import { useEffect, useState } from 'react'
-import { useMyContext } from './Context.jsx'
+import { useMyContext } from './Context.tsx'
 
 function App() {
   const { isMobile } = useMyContext()
   const location = useLocation();
   const navigate = useNavigate()
-  const [mobNav, setMobNav] = useState(false)
+  const [mobNav, setMobNav] = useState<boolean>(false)
+
+  console.log(location);
+  console.log(navigate);
 
 
   useEffect(() => {

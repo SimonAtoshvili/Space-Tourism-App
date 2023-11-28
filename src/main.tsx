@@ -3,7 +3,7 @@ import App from './App.tsx'
 import './reset.css'
 import './index.css'
 import './responsive.css'
-import { MyProvider } from './Context.jsx'
+import { MyProvider } from './Context.tsx'
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

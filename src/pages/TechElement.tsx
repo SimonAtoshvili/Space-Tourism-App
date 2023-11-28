@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useMyContext } from '../Context.jsx'
+import { useMyContext } from '../Context.tsx'
 import { Link, useParams } from 'react-router-dom';
 import '../styles/tech.css'
+
+interface NewData {
+    name: string;
+    images: {
+        portrait: string;
+        landscape: string;
+    };
+    description: string;
+}
 
 export default function TechElement() {
     const { data } = useMyContext();
     const params = useParams<{ techId: string }>();
-    const [newData, setNewData] = useState<undefined>();
+    const [newData, setNewData] = useState<NewData | undefined>();
 
     const [isTablet, setIsTablet] = useState(false);
 
@@ -16,7 +25,7 @@ export default function TechElement() {
         };
 
         console.log(isTablet);
-        
+
 
         window.addEventListener('resize', handleResize);
         handleResize();
@@ -24,9 +33,9 @@ export default function TechElement() {
 
     useEffect(() => {
         if ((params.techId?.split('-'))?.length == 1) {
-            setNewData(data?.technology.filter((element: any) => element.name == params.techId)[0])
+            setNewData(data?.technology.filter((element: NewData) => element.name == params.techId)[0])
         } else {
-            setNewData(data?.technology.filter((element: any) => element.name == params.techId?.split('-').join(' '))[0])
+            setNewData(data?.technology.filter((element: NewData) => element.name == params.techId?.split('-').join(' '))[0])
         }
     }, [data, params])
     return (
@@ -39,7 +48,7 @@ export default function TechElement() {
                             <div className='gross_content'>
                                 <div className="content_tech">
                                     <div className="lis">
-                                        {data?.technology.map((element: any, index: number) => (
+                                        {data?.technology.map((element: NewData, index: number) => (
                                             <Link
                                                 to={`/technology/${data ? ((element.name).split(' ')).length == 1 ? element.name : ((element.name).split(' ')).join('-') : ''}`}
                                                 key={index}>

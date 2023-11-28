@@ -1,16 +1,26 @@
 import { useParams, Link } from "react-router-dom"
-import { useMyContext } from '../Context.jsx'
+import { useMyContext } from '../Context.tsx'
 import { useEffect, useState } from "react";
 import '../styles/crew.css'
+
+interface MemberData {
+    name: string;
+    images: {
+        png: string;
+        webp: string;
+    };
+    role: string;
+    bio: string;
+}
 
 export default function CrewElement() {
     const { data } = useMyContext();
 
-    const [memberData, setMemberData] = useState<any>()
+    const [memberData, setMemberData] = useState<MemberData | undefined>()
     let crewMember = useParams<{ crewId: string }>()
 
     useEffect(() => {
-        setMemberData(data?.crew.filter((element: any) => element.name == crewMember.crewId?.split('-').join(' '))[0])
+        setMemberData(data?.crew.filter((element: MemberData) => element.name == crewMember.crewId?.split('-').join(' '))[0])
     }, [data, crewMember])
 
     return (
@@ -28,7 +38,7 @@ export default function CrewElement() {
                                         {memberData.bio}
                                     </p>
                                     <div className="crew_nav">
-                                        {data?.crew.map((item: any, index: number) => (
+                                        {data?.crew.map((item: MemberData, index: number) => (
                                             <Link key={index} to={`/crew/${item.name.split(' ').join('-')}`}>
                                                 <div
                                                     className='crew_li'

@@ -1,18 +1,28 @@
 import { useParams, Link } from "react-router-dom"
-import { useMyContext } from '../Context.jsx'
+import { useMyContext } from '../Context.tsx'
 import { useEffect, useState } from "react";
 
 import '../styles/destination.css'
 
+interface ParamsData {
+  name: string;
+  images: {
+    png: string;
+    webp: string;
+  };
+  description: string;
+  distance: string;
+  travel: string;
+}
 
 export default function Moon() {
   const { data } = useMyContext();
 
-  const [paramsData, setParamsData] = useState<any>()
+  const [paramsData, setParamsData] = useState<ParamsData | undefined>()
   let params = useParams<{ destId: string }>()
 
   useEffect(() => {
-    setParamsData(data?.destinations.filter((element: any) => element.name == params.destId)[0])
+    setParamsData(data?.destinations.filter((element: ParamsData) => element.name == params.destId)[0])
   }, [data, params])
 
   return (
@@ -27,7 +37,7 @@ export default function Moon() {
                 <div className="content">
                   <ul className="destination_ul">
                     {data
-                      ? data.destinations.map((element: any, index: number) => (
+                      ? data.destinations.map((element: ParamsData, index: number) => (
                         <li
                           key={index}
                           style={element.name == params.destId ? { borderColor: '#FFF' } : {}}

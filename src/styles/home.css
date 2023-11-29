@@ -18,9 +18,7 @@
 .heading {
     color: #D0D6F9;
     font-size: 24px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -32,9 +30,7 @@
 
 .text {
     color: #D0D6F9;
-    font-family: Barlow;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
     line-height: 32px;
 }

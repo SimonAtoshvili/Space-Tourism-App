@@ -5,7 +5,6 @@ import CrewElement from './pages/CrewElement.js'
 import TechElement from './pages/TechElement.js'
 import { useEffect, useState } from 'react'
 import { useMyContext } from './Context.tsx'
-// import Destination from './pages/Destination.tsx'
 
 function App() {
   const { isMobile } = useMyContext()
